@@ -1,4 +1,4 @@
-import StyledT from './components/styled/StyledT'
+import { StyledT } from './components/styled'
 
 function App() {
   return (

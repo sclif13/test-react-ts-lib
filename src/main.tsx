@@ -1,10 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-import './index.css'
+import { ThemeProvider } from 'styled-components'
+import { DropdownProvider, FontsVTBGroup } from '@admiral-ds/react-ui'
+import { REPORT_LIGHT_THEME } from './helpers/theme.ts'
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+
+root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={REPORT_LIGHT_THEME}>
+      <DropdownProvider>
+        <FontsVTBGroup />
+        <App />
+      </DropdownProvider>
+    </ThemeProvider>
   </React.StrictMode>,
-)
+);
